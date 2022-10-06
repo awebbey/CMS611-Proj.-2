@@ -46,6 +46,7 @@ public class Fling : MonoBehaviour
 
     void Update()
     {
+        //Debug.Log(GetComponent<Rigidbody2D>().velocity.magnitude);
 
         //IF the mouse button was clicked inside and then outside of the ball's raius then add force
         if ((didMouseUp && didMouseDown) && (Vector2.Distance(ballPosition, releasePosition) > ballRadius))
