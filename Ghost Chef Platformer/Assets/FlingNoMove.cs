@@ -44,8 +44,12 @@ public class FlingNoMove : MonoBehaviour
 
     void OnMouseUp()
     {
-        releasePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        didMouseUp = true;
+        if (didMouseDown)
+        {
+            releasePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            didMouseUp = true;
+        }
+        
     }
 
     void Update()
