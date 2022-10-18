@@ -62,7 +62,7 @@ public class ResetButton : MonoBehaviour
             }
             if (ypos < 0)
             {
-                ypos = -1 * xpos;
+                ypos = -1 * ypos;
             }
             if (xpos < buttonWidth / 2 && ypos < buttonHeight / 2)
             {
