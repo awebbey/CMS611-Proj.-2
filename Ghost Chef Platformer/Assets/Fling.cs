@@ -34,7 +34,6 @@ public class Fling : MonoBehaviour
 
     void OnMouseDown()
     {
-        //Debug.Log("...");
         ballPosition = gameObject.transform.position;
         didMouseDown = true;
     }
@@ -49,7 +48,7 @@ public class Fling : MonoBehaviour
     {
         //Debug.Log(GetComponent<Rigidbody2D>().velocity.magnitude);
 
-        //IF the mouse button was clicked inside and then outside of the ball's radius then add force
+        //IF the mouse button was clicked inside and then outside of the ball's raius then add force
         if ((didMouseUp && didMouseDown) && (Vector2.Distance(ballPosition, releasePosition) > ballRadius))
         {
             GetComponent<Rigidbody2D>().AddForce((ballPosition - releasePosition) * forceMulitplier);
