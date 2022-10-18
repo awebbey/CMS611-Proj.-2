@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ClickableButtonReset : MonoBehaviour
+public class ResetButton : MonoBehaviour
 {
     private Vector2 buttonPosition;
     private Vector3 mousePosition;
@@ -15,8 +15,8 @@ public class ClickableButtonReset : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        buttonWidth = 1f;
-        buttonHeight = 1f;
+        buttonWidth = 10f;
+        buttonHeight = 5f;
         buttonPosition = gameObject.transform.position;
     }
 
@@ -62,7 +62,7 @@ public class ClickableButtonReset : MonoBehaviour
             }
             if (ypos < 0)
             {
-                ypos = -1 * xpos;
+                ypos = -1 * ypos;
             }
             if (xpos < buttonWidth / 2 && ypos < buttonHeight / 2)
             {
@@ -71,3 +71,4 @@ public class ClickableButtonReset : MonoBehaviour
         }
     }
 }
+
