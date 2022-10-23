@@ -10,7 +10,7 @@ public class LineRendererScript : MonoBehaviour
     Camera camera;
     LineRenderer lr;
 
-    Vector3 camOffset = new Vector3(0, 0, 25);
+    Vector3 camOffset = new Vector3(0, 0, 100);
 
     //[SerializeField] AnimationCurve ac;
 
@@ -30,6 +30,7 @@ public class LineRendererScript : MonoBehaviour
             {
                 lr = gameObject.AddComponent<LineRenderer>();
                 lr.enabled = true;
+                lr.sortingLayerName = "Foreground";
                 lr.positionCount = 2;
                 lr.startWidth = 0.1f;
                 lr.endWidth = 0.1f;
