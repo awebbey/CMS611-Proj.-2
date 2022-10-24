@@ -5,26 +5,54 @@ using UnityEngine;
 public class POBehavior : MonoBehaviour
 {
     private GameObject pigeon;
+    public Sprite flyingpigeon;
+    public Sprite pigeonsprite;
+    private bool go;
+    private bool first;
+    private Vector3 pos;
+    private SpriteRenderer sprenderer;
     // Start is called before the first frame update
     void Start()
     {
-        pigeon = GameObject.Find("pigeon");
+        pigeon = GameObject.Find("pigeon (1)");
+        go = true;
+        first = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (pigeon.transform.position.y < 30)
+        if (go)
         {
-            pigeon.transform.position += new Vector3(0, 0.1f, 0);
-        }
-        else
-        {
-            if (pigeon.transform.position.x < 10)
+            if (first)
             {
-                pigeon.transform.position += new Vector3(0.1f, 0, 0);
+                sprenderer = pigeon.GetComponent<SpriteRenderer>();
+                sprenderer.sprite = flyingpigeon;
+                first = false;
             }
+            else
+            {
+                if (pigeon.transform.position.y < 30)
+                {
+                    pigeon.transform.position += new Vector3(0, 0.1f, 0);
+                }
+                else
+                {
+                    if (pigeon.transform.position.x < 10)
+                    {
+                        pigeon.transform.position += new Vector3(0.1f, 0, 0);
+                    }
+                    else
+                    {
+                        sprenderer = pigeon.GetComponent<SpriteRenderer>();
+                        sprenderer.sprite = pigeonsprite;
+                        go = false;
+                    }
+                }
+            }
+            
         }
+        
         
     }
 }
