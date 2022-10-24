@@ -7,6 +7,7 @@ public class ExitButton : MonoBehaviour
 {
     private Vector2 buttonPosition;
     private Vector3 mousePosition;
+    public int SceneIndex;
     public float buttonWidth;
     public float buttonHeight;
     private float xpos;
@@ -64,7 +65,7 @@ public class ExitButton : MonoBehaviour
             }
             if (xpos < buttonWidth / 2 && ypos < buttonHeight / 2)
             {
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(SceneIndex);
             }
         }
     }
